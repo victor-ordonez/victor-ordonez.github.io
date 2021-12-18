@@ -19,13 +19,14 @@
         <h3>Escribenos y en breve nos pondremos en contacto contigo</h3>
 
 
-          <form class="" name="emailForm" action="mailto:victor.ordonez@gmail.com" method="POST" enctype="text/plain">
+         <!-- <form class="" name="emailForm" action="mailto:victor.ordonez@gmail.com" method="POST" enctype="text/plain">--> 
+	<form method="POST" action="https://formspree.io/victor.ordonez@gmail.com">
            
                 <p>
                   <label for="nombre" class="colocar_nombre">Nombre
                     <span class="obligatorio">*</span>
                   </label>
-                    <input type="text" name="Nombre: " id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                    <input type="text" name="Nombre " id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
                  </p>
                  <br>
               
@@ -33,14 +34,14 @@
                   <label for="email" class="colocar_email">Email
                     <span class="obligatorio">*</span>
                   </label>
-                    <input type="email" name="Email: " id="email" required="obligatorio" placeholder="Escribe tu Email">
+                    <input type="email" name="Email " id="email" required="obligatorio" placeholder="Escribe tu Email">
                 
                 </p>
                 <br>
                 <p>
                   <label for="telefono" class="colocar_telefono">Telefono
                   </label>
-                    <input type="tel" name="Telefono: " id="telefono" placeholder="Escribe tu telefono">
+                    <input type="tel" name="Telefono " id="telefono" placeholder="Escribe tu telefono">
                 
                 </p>    
                 <br>
@@ -48,7 +49,7 @@
                   <label for="asunto" class="colocar_asunto">Asunto
                     <span class="obligatorio">*</span>
                   </label>
-                    <input type="text" name="Asunto: " id="asunto" required="obligatorio" placeholder="Escribe un asunto">
+                    <input type="text" name="Asunto " id="asunto" required="obligatorio" placeholder="Escribe un asunto">
                 
                 </p>    
                 <br>
@@ -60,7 +61,16 @@
                   
                   </p>                    
                   <br>
-                <button type="submit" class="button" value="send"><p>Enviar</p></button>
+			<!--El siguiente atributo esta oculto y es para definir el
+			asunto de tu correo-->
+			<input type="hidden" name="_subject" value="Website contact" />
+	
+			<!--El siguiente campo es por seguridad para evitar spam, esta oculto
+			para el usuario pero no para para el bot que lo acabara rellenando
+			cuando formspree detecte este campo llenado lo mandará directamente
+			a tu carpeta de spam-->
+			<input type="text" name="_gotcha" style="display:none" />
+        	        <button type="submit" class="button" value="send"><p>Enviar</p></button>
 
                 <p class="aviso">
                   <span class="obligatorio"> * </span>los campos son obligatorios.
